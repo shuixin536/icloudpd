@@ -30,3 +30,20 @@
 | RECENT | 500 | 
 | ALBUM | All Photos 或者 Favorites 或者 某个文件夹的名字 | 
 | FOLDERSTRUCTURE | {:%Y/%m/%d} 或者 {:%Y/%m} | 
+
+
+
+
+# 注意
+测试下载全部照片会报错。
+
+如果报错
+```
+folder['fields']['albumNameEnc']['value']).decode('utf-8')
+KeyError: 'albumNameEnc'
+```
+需要升级icloudpd
+`pip install icloudpd==1.7.2`
+
+查找icloudpd版本号
+`pip install icloudpd==`
