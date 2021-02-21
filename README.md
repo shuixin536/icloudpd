@@ -47,3 +47,26 @@ KeyError: 'albumNameEnc'
 
 查找icloudpd版本号
 `pip install icloudpd==`
+
+# 操作
+```
+docker ps
+列出 容器id
+
+CONTAINER ID        IMAGE                        COMMAND             CREATED             STATUS              PORTS               NAMES
+aeaebc726f51        shuixin536/icloudpd:latest   "/home/entry.sh"    19 months ago       Up 13 hours                             icloudpd_fav
+
+docker exec -it 容器id /bin/sh
+
+aa@DiskStation:~# docker exec -it aeaebc726f51 /bin/sh
+/ # vi /home/icloud.sh
+
+ps -ef
+
+/home/icloud.sh
+vi /home/icloud.sh
+
+#!/bin/sh                                                                                                                                                              
+icloudpd --directory /data --username ${USERNAME} --password ${PASSWORD} --size original --recent ${RECENT} --album ${ALBUM} --folder-structure ${FOLDERSTRUCTURE} 
+icloudpd的参数参考 https://github.com/icloud-photos-downloader/icloud_photos_downloader#usage
+```
